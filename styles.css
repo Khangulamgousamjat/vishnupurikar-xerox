@@ -121,7 +121,7 @@ h1 em, h2 em { color: var(--rose-500); font-style: italic; }
 .story-section { background: var(--cream); }
 .story-grid { display: grid; grid-template-columns: .88fr 1.12fr; gap: 96px; align-items: center; }
 .story-image { position: relative; padding: 0 28px 28px 0; }
-.story-image img { width: 100%; height: 480px; object-fit: cover; object-position: center top; border-radius: 4px; }
+.story-image img { width: 100%; height: 480px; object-fit: contain; object-position: center; border-radius: 4px; background: var(--cream-deep); }
 .story-image::after { position: absolute; right: 0; bottom: 0; z-index: 0; width: 72%; height: 72%; border: 1px solid var(--rose-200); content: ""; }
 .story-image img, .image-caption { position: relative; z-index: 1; }
 .image-caption { position: absolute; right: 13px; bottom: 16px; color: var(--rose-950); font-size: 10px; transform: rotate(-90deg) translateX(100%); transform-origin: right bottom; }
@@ -139,8 +139,8 @@ h1 em, h2 em { color: var(--rose-500); font-style: italic; }
 .gallery-heading { margin-bottom: 36px; }
 .gallery-grid { display: grid; grid-template-columns: 1.35fr 1fr 1fr; grid-template-rows: 250px 210px; gap: 12px; }
 .gallery-grid figure { position: relative; min-width: 0; margin: 0; overflow: hidden; border-radius: 3px; background: var(--cream-deep); }
-.gallery-grid figure img { width: 100%; height: 100%; object-fit: cover; filter: saturate(.8); transition: filter .2s ease, transform .2s ease; }
-.gallery-grid figure:hover img { filter: saturate(1); transform: scale(1.015); }
+.gallery-grid figure img { width: 100%; height: 100%; object-fit: contain; object-position: center; filter: saturate(.8); transition: filter .2s ease; }
+.gallery-grid figure:hover img { filter: saturate(1); }
 .gallery-grid figcaption { position: absolute; right: 12px; bottom: 10px; left: 12px; padding: 7px 9px; background: rgba(67, 28, 40, .82); color: var(--white); font-size: 10px; line-height: 1.2; }
 .gallery-grid figcaption strong, .gallery-grid figcaption span { display: block; }
 .gallery-grid figcaption span { margin-top: 2px; color: var(--rose-200); font-size: 9px; }
@@ -179,6 +179,9 @@ h1 em, h2 em { color: var(--rose-500); font-style: italic; }
 .developer-intro p { color: var(--muted); max-width: 620px; }
 .developer-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 20px; }
 .developer-meta { display: flex; flex-wrap: wrap; gap: 18px; margin-top: 22px; color: var(--rose-900); font-size: 12px; font-weight: 700; }
+.developer-visual { display: grid; gap: 14px; }
+.developer-photo { overflow: hidden; border: 1px solid var(--line); border-radius: 24px; background: var(--cream-deep); }
+.developer-photo img { width: 100%; height: 330px; object-fit: contain; object-position: center; }
 .developer-card { background: var(--rose-950); color: var(--white); border-radius: 24px; padding: 28px; box-shadow: 0 16px 26px rgba(67,28,40,.12); }
 .developer-badge { display: inline-flex; align-items: center; justify-content: center; min-width: 110px; padding: 9px 14px; border-radius: 999px; background: var(--rose-100); color: var(--rose-900); font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; }
 .developer-card ul { margin: 18px 0 0; padding-left: 18px; color: var(--rose-100); list-style: disc; line-height: 1.9; font-size: 13px; }

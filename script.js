@@ -18,6 +18,11 @@ if (menuToggle && mainNav) {
 const year = document.querySelector("#year");
 if (year) year.textContent = new Date().getFullYear();
 
+document.querySelectorAll(".gallery-grid figure").forEach((figure) => {
+  const image = figure.querySelector("img");
+  if (image) figure.style.setProperty("--gallery-image", `url("${image.src}")`);
+});
+
 const translations = {
   mr: {
     "nav a:nth-of-type(1)": "Services",

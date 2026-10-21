@@ -35,7 +35,7 @@ a { color: inherit; text-decoration: none; }
 .site-header { position: sticky; top: 0; z-index: 10; background: rgba(251, 246, 238, .92); border-bottom: 1px solid var(--line); backdrop-filter: blur(16px); }
 .nav-wrap { display: flex; align-items: center; justify-content: space-between; min-height: 78px; }
 .brand { display: inline-flex; align-items: center; gap: 11px; color: var(--rose-950); }
-.brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--rose-500); border-radius: 50%; font-family: var(--heading); font-size: 20px; font-style: italic; }
+.brand-logo { width: 156px; height: 48px; object-fit: contain; object-position: left center; }
 .brand strong, .brand small { display: block; line-height: 1.1; }
 .brand strong { font-family: var(--heading); font-size: 17px; letter-spacing: -.02em; }
 .brand small { margin-top: 4px; color: var(--muted); font-size: 9px; letter-spacing: .16em; text-transform: uppercase; }
@@ -109,6 +109,14 @@ h1 em, h2 em { color: var(--rose-500); font-style: italic; }
 .service-note div > span { margin-top: 3px; color: var(--muted); font-size: 11px; }
 .service-note a { margin-left: auto; color: var(--rose-800); font-size: 11px; font-weight: 700; white-space: nowrap; }
 .service-note a span { display: inline; margin-left: 7px; }
+.service-showcase { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 42px; }
+.showcase-card { overflow: hidden; border: 1px solid var(--line); border-radius: 16px; background: var(--cream); box-shadow: 0 14px 30px rgba(93, 38, 55, .08); }
+.showcase-card img { width: 100%; height: 250px; padding: 14px; object-fit: contain; object-position: center; background: var(--cream-deep); }
+.showcase-card > div { padding: 16px 18px 18px; }
+.showcase-card span, .showcase-card strong, .showcase-card small { display: block; }
+.showcase-card span { color: var(--rose-500); font-size: 10px; font-weight: 700; letter-spacing: .14em; }
+.showcase-card strong { margin-top: 8px; color: var(--rose-950); font-family: var(--heading); font-size: 20px; line-height: 1.2; }
+.showcase-card small { margin-top: 6px; color: var(--muted); font-size: 12px; line-height: 1.5; }
 
 .shop-details-section { background: var(--cream); padding-top: 92px; padding-bottom: 92px; }
 .shop-details-grid { display: grid; grid-template-columns: 1fr 1.4fr 1fr; gap: 14px; }
@@ -229,6 +237,7 @@ body.marathi-mode .signature {
   .hero-visual { max-width: 600px; margin: 0 auto; width: 100%; }
   .hero-image-wrap { height: 420px; }
   .service-grid { grid-template-columns: repeat(2, 1fr); }
+  .service-showcase { grid-template-columns: 1fr 1fr; }
   .shop-details-grid { grid-template-columns: 1fr 1fr; }
   .detail-card:nth-child(2) { grid-column: span 2; }
   .story-grid { gap: 58px; }
@@ -260,6 +269,7 @@ body.marathi-mode .signature {
   .section-heading { display: block; margin-bottom: 34px; }
   .section-intro { margin-top: 20px; }
   .service-grid { grid-template-columns: 1fr; }
+  .service-showcase { grid-template-columns: 1fr; }
   .service-card { min-height: 275px; }
   .service-icon { margin-top: 27px; }
   .shop-details-grid { grid-template-columns: 1fr; }

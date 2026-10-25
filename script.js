@@ -13,6 +13,15 @@ if (menuToggle && mainNav) {
       menuToggle.setAttribute("aria-expanded", "false");
     });
   });
+
+  document.addEventListener("click", (e) => {
+    if (mainNav.classList.contains("is-open")) {
+      if (!mainNav.contains(e.target) && !menuToggle.contains(e.target)) {
+        mainNav.classList.remove("is-open");
+        menuToggle.setAttribute("aria-expanded", "false");
+      }
+    }
+  });
 }
 
 const year = document.querySelector("#year");
@@ -33,9 +42,10 @@ const translations = {
     ".hero-copy .eyebrow": "तुमच्या जवळची document service",
     ".hero-copy h1": "तुमच्या छोट्या कामांना<br><em>neat finishing.</em>",
     ".hero-lede": "Xerox, Print, Binding, Lamination आणि रोजच्या document कामांसाठी एक विश्वासू जागा — आणि गरज असेल तेव्हा personal Insurance guidance.",
-    ".button-primary": "Services पहा ↗",
-    ".button-quiet": "<img class=\"icon-whatsapp\" src=\"images/whatsapp.svg\" alt=\"\" /> WhatsApp करा",
-    ".hero-note span:last-child": "Kaleshwar Kaman जवळ, Vishnupuri, Nanded",
+    ".hero-actions .button-primary": "Services पहा ↗",
+    ".hero-actions .button-quiet": "<img class=\"icon-whatsapp\" src=\"images/whatsapp.svg\" alt=\"\" /> WhatsApp करा",
+    ".hero-map-link > span:first-child": "Near Kaleshwar Kaman, Vishnupuri, Nanded",
+    ".map-badge": "थेट नकाशा ↗",
     ".hero-stamp strong": "मदतीसाठी<br>नेहमी तयार",
     ".hero-stamp small": "प्रेमाने, रोज",
     ".hero-card strong": "Local & trusted",
@@ -71,9 +81,11 @@ const translations = {
     ".shop-details-section .eyebrow": "आमच्या shop मध्ये",
     ".shop-details-section h2": "Fast service,<br><em>affordable rate.</em>",
     ".shop-details-section .section-intro": "Kaleshwar Kaman जवळ, Vishnupuri मध्ये रोजच्या document कामांसाठी लागणाऱ्या सगळ्या services एकाच ठिकाणी.",
-    ".detail-card:nth-child(1) h3": "Address",
+    ".detail-card:nth-child(1) h3": "पत्ता",
     ".detail-card:nth-child(1) p": "Near Kaleshwar Kaman, Vishnupuri, Nanded",
-    ".detail-card:nth-child(2) h3": "Available services",
+    ".detail-card-map-link": "थेट नकाशा आणि directions पहा <span>↗</span>",
+    ".detail-card:nth-child(2) h3": "उपलब्ध सेवा",
+    "#shop-services-list": "<li>CSC सेंटर सेवा</li><li>सर्व प्रकारचे फॉर्म भरून मिळतील</li><li>लॅमिनेशन</li><li>स्पायरल बाईंडिंग</li><li>व्हॉट्सअ‍ॅप प्रिंट</li><li>पेनड्राइव्ह प्रिंट</li><li>कलर झेरॉक्स आणि झेरॉक्स</li><li>आयडी कार्ड तयार करणे</li><li>डॉक्युमेंट स्कॅनिंग</li><li>प्रोजेक्ट्स आणि असाइनमेंट्स प्रिंट</li>",
     ".detail-card:nth-child(3) h3": "लोक आम्हाला का निवडतात",
     ".detail-card:nth-child(3) p": "Best quality, affordable rates आणि fastest service — सगळीकडच्या ग्राहकांचा विश्वास.",
     ".story-copy .eyebrow": "Vishnupuri मधला ओळखीचा चेहरा",
@@ -100,8 +112,14 @@ const translations = {
     ".contact-action:nth-child(2) strong": "Conversation सुरू करा",
     ".contact-action:nth-child(3) small": "Mail करा",
     ".contact-action:nth-child(3) strong": "Vishnupurikarmaroti1@gmail.com",
-    ".contact-address small": "पत्ता",
-    ".contact-address strong": "Kaleshwar Kaman जवळ,<br>Vishnupuri, Nanded",
+    ".contact-address-link small": "पत्ता (थेट नकाशा)",
+    ".contact-address-link strong": "Near Kaleshwar Kaman,<br>Vishnupuri, Nanded <span>↗</span>",
+    ".live-text": "थेट दुकानाचे स्थान",
+    ".map-title": "विष्णुपूरिकर झेरॉक्सला भेट द्या",
+    ".map-address": "Near Kaleshwar Kaman, Vishnupuri, Nanded, Maharashtra 431606",
+    ".map-directions-btn": "Directions मिळवा <span>↗</span>",
+    ".map-view-btn": "Google Maps वर पहा <span>↗</span>",
+    ".map-landmark": "लँडमार्क: Near Kaleshwar Kaman, Vishnupuri",
     ".footer-grid > div:first-child > p": "Print. Protect. Simplify.",
     ".footer-credit": "Made by Gous Khan",
     ".footer-meta span:first-child": "मराठी <b>·</b> English"
@@ -115,9 +133,10 @@ const translations = {
     ".hero-copy .eyebrow": "Your neighbourhood document partner",
     ".hero-copy h1": "Small details.<br><em>Done beautifully.</em>",
     ".hero-lede": "One friendly place for printing, copies, binding, lamination and everyday document help — with personal insurance guidance when you need it.",
-    ".button-primary": "Explore services ↗",
-    ".button-quiet": "<img class=\"icon-whatsapp\" src=\"images/whatsapp.svg\" alt=\"\" /> WhatsApp us",
-    ".hero-note span:last-child": "Near Kaleshwar Kaman, Vishnupuri, Nanded",
+    ".hero-actions .button-primary": "Explore services ↗",
+    ".hero-actions .button-quiet": "<img class=\"icon-whatsapp\" src=\"images/whatsapp.svg\" alt=\"\" /> WhatsApp us",
+    ".hero-map-link > span:first-child": "Near Kaleshwar Kaman, Vishnupuri, Nanded",
+    ".map-badge": "Live Map ↗",
     ".hero-stamp strong": "Here to help",
     ".hero-stamp small": "with care, every day",
     ".hero-card strong": "Local & trusted",
@@ -155,7 +174,9 @@ const translations = {
     ".shop-details-section .section-intro": "Everything you need for daily document work in one place near Kaleshwar Kaman, Vishnupuri.",
     ".detail-card:nth-child(1) h3": "Address",
     ".detail-card:nth-child(1) p": "Near Kaleshwar Kaman, Vishnupuri, Nanded",
+    ".detail-card-map-link": "View live map &amp; directions <span>↗</span>",
     ".detail-card:nth-child(2) h3": "Available services",
+    "#shop-services-list": "<li>CSC center support</li><li>All docs fill help</li><li>Lamination</li><li>Spiral binding</li><li>WhatsApp print</li><li>Pendrive print</li><li>Colour Xerox and Xerox</li><li>ID card making</li><li>Document scanning</li><li>Projects and assignments print</li>",
     ".detail-card:nth-child(3) h3": "Why people choose us",
     ".detail-card:nth-child(3) p": "Best quality, affordable rates, and fastest service — trusted by customers from everywhere.",
     ".story-copy .eyebrow": "A familiar face in Vishnupuri",
@@ -182,8 +203,14 @@ const translations = {
     ".contact-action:nth-child(2) strong": "Start a conversation",
     ".contact-action:nth-child(3) small": "Mail us",
     ".contact-action:nth-child(3) strong": "Vishnupurikarmaroti1@gmail.com",
-    ".contact-address small": "Find us",
-    ".contact-address strong": "Near Kaleshwar Kaman,<br />Vishnupuri, Nanded",
+    ".contact-address-link small": "Find us",
+    ".contact-address-link strong": "Near Kaleshwar Kaman,<br />Vishnupuri, Nanded <span>↗</span>",
+    ".live-text": "Live Shop Location",
+    ".map-title": "Visit Vishnupurikar Xerox",
+    ".map-address": "Near Kaleshwar Kaman, Vishnupuri, Nanded, Maharashtra 431606",
+    ".map-directions-btn": "Get directions <span>↗</span>",
+    ".map-view-btn": "Open in Google Maps <span>↗</span>",
+    ".map-landmark": "Landmark: Near Kaleshwar Kaman, Vishnupuri",
     ".footer-grid > div:first-child > p": "Print. Protect. Simplify.",
     ".footer-credit": "Made by Gous Khan",
     ".footer-meta span:first-child": "English <b>·</b> मराठी"
@@ -193,10 +220,18 @@ const translations = {
 function setLanguage(language) {
   const content = translations[language];
   if (!content) return;
+
+  // On developer page, do not alter shop content
+  if (document.body.classList.contains("developer-page")) {
+    document.documentElement.lang = language === "mr" ? "mr" : "en";
+    return;
+  }
+
   Object.entries(content).forEach(([selector, value]) => {
     const element = document.querySelector(selector);
     if (element) element.innerHTML = value;
   });
+
   document.documentElement.lang = language === "mr" ? "mr" : "en";
   document.body.classList.toggle("marathi-mode", language === "mr");
   document.querySelectorAll(".language-option").forEach((option) => {

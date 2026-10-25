@@ -70,6 +70,9 @@ h1 em, h2 em { color: var(--rose-500); font-style: italic; }
 .button-quiet { border: 1px solid var(--line); color: var(--rose-900); }
 .hero-note { display: flex; align-items: center; gap: 12px; margin-top: 54px; color: var(--muted); font-size: 11px; }
 .note-line { width: 36px; height: 1px; background: var(--rose-200); }
+.hero-map-link { display: inline-flex; align-items: center; gap: 6px; color: var(--muted); transition: color .2s ease; }
+.hero-map-link:hover { color: var(--rose-900); }
+.map-badge { display: inline-block; padding: 2px 8px; border-radius: 100px; background: var(--rose-100); border: 1px solid var(--rose-200); color: var(--rose-800); font-size: 9px; font-weight: 700; letter-spacing: .04em; }
 .hero-visual { position: relative; padding: 0 34px 38px 0; }
 .hero-image-wrap { height: 500px; overflow: hidden; border-radius: 160px 160px 6px 6px; background: var(--cream-deep); }
 .hero-image-wrap img { width: 100%; height: 100%; object-fit: contain; object-position: center top; }
@@ -123,6 +126,8 @@ h1 em, h2 em { color: var(--rose-500); font-style: italic; }
 .detail-card { padding: 24px; background: var(--white); border: 1px solid var(--line); min-height: 235px; }
 .detail-card h3 { margin-bottom: 11px; color: var(--rose-950); font-family: var(--heading); font-size: var(--h3-size); font-weight: 600; }
 .detail-card p { margin-bottom: 0; color: var(--muted); font-size: var(--small-size); }
+.detail-card-map-link { display: inline-flex; align-items: center; margin-top: 14px; color: var(--rose-800); font-size: 12px; font-weight: 700; }
+.detail-card-map-link:hover { text-decoration: underline; }
 .detail-card ul { margin: 0; padding-left: 19px; color: var(--muted); font-size: var(--small-size); line-height: 1.6; }
 .detail-card-highlight { background: var(--rose-100); border-color: var(--rose-200); }
 
@@ -171,6 +176,24 @@ h1 em, h2 em { color: var(--rose-500); font-style: italic; }
 .contact-action small, .contact-address small { color: var(--rose-200); font-size: 10px; }
 .contact-action strong, .contact-address strong { color: var(--white); font-size: var(--small-size); }
 .contact-action:hover strong { color: var(--rose-200); }
+
+.map-card { margin-top: 40px; padding: 36px 40px; background: var(--white); border: 1px solid var(--line); border-radius: 18px; box-shadow: 0 20px 45px rgba(93, 38, 55, .08); }
+.map-header { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; margin-bottom: 24px; }
+.live-pill { display: inline-flex; align-items: center; gap: 8px; padding: 5px 12px; margin-bottom: 10px; border-radius: 100px; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; font-size: 11px; font-weight: 700; }
+.live-pulse { width: 8px; height: 8px; border-radius: 50%; background: #10b981; box-shadow: 0 0 0 0 rgba(16, 185, 129, .7); animation: mapPulse 2s infinite; }
+@keyframes mapPulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, .7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(16, 185, 129, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+.map-title { margin: 0 0 6px; color: var(--rose-950); font-family: var(--heading); font-size: 26px; }
+.map-address { margin: 0; color: var(--muted); font-size: var(--small-size); }
+.map-buttons { display: flex; gap: 12px; flex-wrap: wrap; }
+.map-btn { font-size: 12px; min-height: 44px; padding: 0 16px; }
+.map-embed-wrapper { overflow: hidden; border-radius: 14px; border: 1px solid var(--line); background: var(--cream-deep); line-height: 0; }
+.map-embed-wrapper iframe { display: block; border: 0; width: 100%; height: 380px; }
+.map-footer { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-top: 16px; font-size: 11px; color: var(--muted); }
+.map-coord { font-family: monospace, sans-serif; font-weight: 600; color: var(--rose-900); }
 
 .site-footer { padding: 38px 0; background: var(--cream); }
 .footer-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; align-items: end; gap: 30px; }
@@ -286,6 +309,11 @@ body.marathi-mode .signature {
   .gallery-certificate { aspect-ratio: 4 / 3 !important; }
   .contact-section { padding: 64px 0; }
   .contact-card { padding: 36px 24px; }
+  .map-card { padding: 22px 18px; margin-top: 26px; }
+  .map-header { flex-direction: column; align-items: flex-start; gap: 16px; }
+  .map-buttons { width: 100%; }
+  .map-btn { width: 100%; }
+  .map-embed-wrapper iframe { height: 280px; }
   .footer-grid { grid-template-columns: 1fr; gap: 26px; }
   .footer-links { justify-content: flex-start; flex-wrap: wrap; }
   .footer-meta { justify-items: start; }

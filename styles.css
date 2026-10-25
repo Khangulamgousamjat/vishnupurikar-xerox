@@ -533,6 +533,9 @@ body.english-mode h2 em {
   display: block;
   transition: transform .3s ease;
 }
+.service-card-media img[src*="id-card-maker"] {
+  object-position: center 30%;
+}
 .service-card:hover .service-card-media img {
   transform: scale(1.04);
 }

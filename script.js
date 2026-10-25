@@ -35,7 +35,7 @@ document.querySelectorAll(".gallery-grid figure").forEach((figure) => {
   if (image) figure.style.setProperty("--gallery-image", `url("${image.src}")`);
 });
 
-// Translation Dictionary (Marathi Default <-> English)
+// Translation Dictionary (Marathi Default <-> English) - Professional, No Cartoon Emojis
 const translations = {
   mr: {
     langButtonText: "English Version",
@@ -44,7 +44,7 @@ const translations = {
     "nav a.nav-link:nth-of-type(3)": "गॅलरी",
     "nav a.nav-link:nth-of-type(4)": "पत्ता व संपर्क",
     ".developer-link": "डेव्हलपर",
-    ".nav-call": "📞 कॉल करा <span>↗</span>",
+    ".nav-call": "कॉल करा <span>↗</span>",
 
     ".hero-copy .eyebrow": "<span></span> विष्णुपूरीतील आपले विश्वासू केंद्र",
     ".hero-copy h1": "कागदपत्रांची प्रत्येक गरज.<br /><em>अचूक आणि दर्जेदार.</em>",
@@ -52,7 +52,7 @@ const translations = {
     ".button-location .btn-text": "दुकानाचा थेट रस्ता (Google Maps)",
     ".button-whatsapp .btn-text": "व्हॉट्सअ‍ॅपवर मेसेज करा",
     ".button-quiet .btn-text": "आमच्या सर्व सेवा",
-    ".hero-map-link > span:first-child": "📍 काळेश्वर कमान जवळ, विष्णुपूरी, नांदेड",
+    ".hero-map-link > span:first-child": "काळेश्वर कमान जवळ, विष्णुपूरी, नांदेड",
     ".map-badge": "थेट स्थान (Live Pin) ↗",
     ".hero-stamp strong": "आपल्या सेवेसाठी",
     ".hero-stamp small": "सदैव तत्पर",
@@ -94,7 +94,7 @@ const translations = {
     ".shop-details-section .section-intro": "काळेश्वर कमान जवळ, विष्णुपूरी येथे सर्व प्रकारच्या कागदपत्रांच्या कामासाठी एकाच छताखाली सोय.",
     ".detail-card:nth-child(1) h3": "पत्ता",
     ".detail-card:nth-child(1) p": "काळेश्वर कमान जवळ, विष्णुपूरी, नांदेड - ४३१६०६",
-    ".detail-card:nth-child(1) a": "<span>📍</span> थेट रस्ता पहा (Google Maps) <span>↗</span>",
+    ".detail-card:nth-child(1) a": "<span>थेट रस्ता पहा (Google Maps) ↗</span>",
     ".detail-card:nth-child(2) h3": "उपलब्ध सेवा",
     "#shop-services-list": "<li>CSC केंद्र व ऑनलाइन सेवा</li><li>सर्व प्रकारचे सरकारी व शैक्षणिक फॉर्म भरणे</li><li>हाय-क्वालिटी लॅमिनेशन</li><li>स्पायरल बाईंडिंग</li><li>व्हॉट्सअ‍ॅपवरून थेट प्रिंट सेवा</li><li>पेनड्राइव्ह प्रिंट सेवा</li><li>कलर झेरॉक्स आणि ब्लॅक &amp; व्हाईट झेरॉक्स</li><li>स्मार्ट आयडी कार्ड तयार करणे</li><li>डॉक्युमेंट स्कॅनिंग (PDF)</li><li>कॉलेज प्रोजेक्ट्स व असाइनमेंट्स प्रिंटिंग</li>",
     ".detail-card:nth-child(3) h3": "ग्राहक आम्हाला का निवडतात?",
@@ -133,9 +133,9 @@ const translations = {
     ".live-text": "थेट दुकानाचे स्थान (Live Verified Pin)",
     ".map-title": "विष्णुपूरिकर झेरॉक्स व विमा सेवा केंद्र",
     ".map-address": "काळेश्वर कमान जवळ, विष्णुपूरी, नांदेड, महाराष्ट्र - ४३१६०६",
-    ".map-buttons .button-location": "<span class=\"btn-icon\">📍</span> थेट दुकानाचा रस्ता मिळवा (Get Directions) <span>↗</span>",
-    ".map-buttons .button-quiet": "<span>🗺️</span> गुगल मॅप्सवर उघडा (Open in Maps) <span>↗</span>",
-    ".map-coord": "📍 अचूक GPS: 19.1119544, 77.2902582",
+    ".map-buttons .button-location": "<span>दुकानाचा थेट रस्ता मिळवा (Get Directions) ↗</span>",
+    ".map-buttons .button-quiet": "<span>गुगल मॅप्सवर उघडा (Open in Maps) ↗</span>",
+    ".map-coord": "अचूक GPS: 19.1119544, 77.2902582",
     ".map-landmark": "लँडमार्क: काळेश्वर कमान जवळ, विष्णुपूरी, नांदेड",
 
     ".footer-grid > div:first-child > p": "कागदपत्रांची अचूक आणि आपुलकीची सेवा.",
@@ -154,7 +154,7 @@ const translations = {
     "nav a.nav-link:nth-of-type(3)": "Gallery",
     "nav a.nav-link:nth-of-type(4)": "Contact",
     ".developer-link": "Developer",
-    ".nav-call": "📞 Call us <span>↗</span>",
+    ".nav-call": "Call us <span>↗</span>",
 
     ".hero-copy .eyebrow": "<span></span> Your neighbourhood document partner",
     ".hero-copy h1": "Small details.<br /><em>Done beautifully.</em>",
@@ -162,7 +162,7 @@ const translations = {
     ".button-location .btn-text": "Get Shop Directions (Google Maps)",
     ".button-whatsapp .btn-text": "Message on WhatsApp",
     ".button-quiet .btn-text": "Explore our services",
-    ".hero-map-link > span:first-child": "📍 Near Kaleshwar Kaman, Vishnupuri, Nanded",
+    ".hero-map-link > span:first-child": "Near Kaleshwar Kaman, Vishnupuri, Nanded",
     ".map-badge": "Live Pin ↗",
     ".hero-stamp strong": "Here to help",
     ".hero-stamp small": "with care, every day",
@@ -204,7 +204,7 @@ const translations = {
     ".shop-details-section .section-intro": "Everything you need for daily document work in one friendly place near Kaleshwar Kaman, Vishnupuri.",
     ".detail-card:nth-child(1) h3": "Address",
     ".detail-card:nth-child(1) p": "Near Kaleshwar Kaman, Vishnupuri, Nanded - 431606",
-    ".detail-card:nth-child(1) a": "<span>📍</span> View on Google Maps <span>↗</span>",
+    ".detail-card:nth-child(1) a": "<span>View on Google Maps ↗</span>",
     ".detail-card:nth-child(2) h3": "Available services",
     "#shop-services-list": "<li>CSC center support</li><li>All online forms fill help</li><li>High-grade lamination</li><li>Spiral binding</li><li>Direct WhatsApp print service</li><li>Pendrive print service</li><li>Colour Xerox and black &amp; white Xerox</li><li>Smart ID card making</li><li>Document scanning (PDF)</li><li>Projects and assignments printing</li>",
     ".detail-card:nth-child(3) h3": "Why people choose us",
@@ -243,9 +243,9 @@ const translations = {
     ".live-text": "Live Shop Location (Verified Pin)",
     ".map-title": "Vishnupurikar Xerox &amp; Seva Kendra",
     ".map-address": "Near Kaleshwar Kaman, Vishnupuri, Nanded, Maharashtra - 431606",
-    ".map-buttons .button-location": "<span class=\"btn-icon\">📍</span> Get Shop Directions (Google Maps) <span>↗</span>",
-    ".map-buttons .button-quiet": "<span>🗺️</span> Open in Google Maps <span>↗</span>",
-    ".map-coord": "📍 Verified GPS: 19.1119544, 77.2902582",
+    ".map-buttons .button-location": "<span>Get Shop Directions (Google Maps) ↗</span>",
+    ".map-buttons .button-quiet": "<span>Open in Google Maps ↗</span>",
+    ".map-coord": "Verified GPS: 19.1119544, 77.2902582",
     ".map-landmark": "Landmark: Near Kaleshwar Kaman, Vishnupuri, Nanded",
 
     ".footer-grid > div:first-child > p": "Accurate, personal, and reliable document services.",

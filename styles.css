@@ -132,7 +132,7 @@ a { color: inherit; text-decoration: none; }
   border-color: var(--rose-500);
 }
 
-/* Big Language Switcher Button */
+/* Big Language Switcher Button (Clean, Professional, No Emoji) */
 .lang-toggle-btn {
   background: var(--white);
   color: var(--rose-900);
@@ -144,9 +144,6 @@ a { color: inherit; text-decoration: none; }
   background: var(--rose-100);
   border-color: var(--rose-900);
   transform: translateY(-1px);
-}
-.lang-globe {
-  font-size: 15px;
 }
 
 /* Nav Call Button */
@@ -204,7 +201,7 @@ a { color: inherit; text-decoration: none; }
   box-shadow: 0 10px 24px rgba(93, 38, 55, .14);
 }
 
-/* Standout Big Location Button */
+/* Standout Big Location Button (Clean, Professional, No Emoji) */
 .button-location {
   background: linear-gradient(135deg, var(--rose-950) 0%, var(--rose-900) 100%);
   color: var(--white);
@@ -215,15 +212,6 @@ a { color: inherit; text-decoration: none; }
   background: linear-gradient(135deg, #2b0e18 0%, var(--rose-950) 100%);
   box-shadow: 0 14px 32px rgba(67, 28, 40, .36);
   color: var(--white);
-}
-.button-location .btn-icon {
-  font-size: 19px;
-  line-height: 1;
-  animation: pinHop 2s infinite ease-in-out;
-}
-@keyframes pinHop {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-4px); }
 }
 
 /* Big WhatsApp Button */
@@ -403,6 +391,7 @@ body.english-mode h2 em {
   font-weight: 700;
 }
 
+/* Hero Visual with Swapped Red Image */
 .hero-visual {
   position: relative;
   padding: 0 28px 32px 0;
@@ -417,8 +406,8 @@ body.english-mode h2 em {
 .hero-image-wrap img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
-  object-position: center top;
+  object-fit: cover;
+  object-position: center 15%;
 }
 .hero-stamp {
   position: absolute;
@@ -669,7 +658,7 @@ body.english-mode h2 em {
 }
 
 /* ==========================================================================
-   OUR STORY SECTION
+   OUR STORY SECTION (With Swapped Flowers Presentation Image)
    ========================================================================== */
 .story-section { background: var(--cream); }
 .story-grid {
@@ -682,7 +671,8 @@ body.english-mode h2 em {
 .story-image img {
   width: 100%;
   height: 480px;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
   border-radius: var(--radius-md);
   background: var(--cream-deep);
   border: 1px solid var(--line);
@@ -860,7 +850,8 @@ body.english-mode h2 em {
   border: 1.5px solid var(--rose-500);
   border-radius: 50%;
   color: var(--rose-200);
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 700;
 }
 .contact-action small { color: var(--rose-200); font-size: 11px; display: block; }
 .contact-action strong { color: var(--white); font-size: var(--text-sm); display: block; line-height: 1.35; margin-top: 2px; }
@@ -957,6 +948,216 @@ body.english-mode h2 em {
 }
 
 /* ==========================================================================
+   DEVELOPER PAGE STYLING (Compact, small & properly proportioned photo)
+   ========================================================================== */
+.developer-main { background: var(--cream); }
+.developer-hero-wrap {
+  display: grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap: 48px;
+  align-items: center;
+}
+.developer-intro h1 {
+  font-size: clamp(34px, 4vw, 54px);
+  margin-bottom: 10px;
+  line-height: 1.15;
+  color: var(--rose-950);
+}
+.developer-intro h2 {
+  font-size: clamp(18px, 2vw, 24px);
+  margin-bottom: 16px;
+  color: var(--rose-800);
+  font-weight: 600;
+  line-height: 1.35;
+}
+.developer-intro p {
+  color: var(--muted);
+  max-width: 580px;
+  font-size: var(--text-base);
+  line-height: 1.7;
+}
+.developer-actions {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.developer-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  margin-top: 20px;
+  color: var(--rose-900);
+  font-size: var(--text-sm);
+  font-weight: 700;
+}
+
+/* Compact, Small Developer Photo Card */
+.developer-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  max-width: 380px;
+  margin: 0 auto;
+}
+.developer-photo {
+  width: 220px;
+  height: 220px;
+  overflow: hidden;
+  border-radius: var(--radius-lg);
+  border: 3px solid var(--white);
+  background: var(--cream-deep);
+  box-shadow: 0 14px 32px rgba(93, 38, 55, .15);
+}
+.developer-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 25%;
+}
+.developer-card {
+  width: 100%;
+  background: var(--rose-950);
+  color: var(--white);
+  border-radius: var(--radius-lg);
+  padding: 24px 28px;
+  box-shadow: 0 16px 36px rgba(67, 28, 40, .14);
+}
+.developer-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--rose-100);
+  color: var(--rose-900);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.developer-card ul {
+  margin: 14px 0 0;
+  padding-left: 20px;
+  color: var(--rose-100);
+  list-style: disc;
+  line-height: 1.85;
+  font-size: var(--text-sm);
+}
+
+.light-panel { background: var(--rose-100); }
+.summary-copy {
+  color: var(--muted);
+  font-size: var(--text-base);
+  line-height: 1.85;
+  max-width: 900px;
+}
+.narrow-heading { margin-bottom: 24px; }
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.skill-box {
+  background: var(--white);
+  border: 1px solid var(--line);
+  padding: 24px;
+  border-radius: var(--radius-md);
+}
+.skill-box h3 {
+  margin-bottom: 8px;
+  color: var(--rose-950);
+  font-size: var(--text-lg);
+}
+.skill-box p {
+  margin: 0;
+  color: var(--muted);
+  font-size: var(--text-sm);
+  line-height: 1.65;
+}
+
+.timeline { display: grid; gap: 16px; }
+.timeline-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 20px;
+  padding: 20px 0;
+  border-top: 1px solid rgba(93, 38, 55, .15);
+}
+.time-tag {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 32px;
+  padding: 0 12px;
+  border-radius: var(--radius-pill);
+  background: var(--rose-800);
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 700;
+  align-self: flex-start;
+}
+.timeline-item h3 {
+  margin-bottom: 6px;
+  color: var(--rose-950);
+  font-size: var(--text-lg);
+}
+.timeline-item p { margin: 0; color: var(--muted); line-height: 1.7; font-size: var(--text-sm); }
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+.project-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 24px;
+}
+.project-date {
+  display: inline-block;
+  margin-bottom: 10px;
+  color: var(--rose-800);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.project-card h3 {
+  margin-bottom: 8px;
+  color: var(--rose-950);
+  font-size: var(--text-lg);
+}
+.project-card p { margin: 0; color: var(--muted); line-height: 1.7; font-size: var(--text-sm); }
+
+.education-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px;
+}
+.edu-card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 22px;
+}
+.edu-card h3 {
+  margin-bottom: 8px;
+  color: var(--rose-950);
+  font-size: var(--text-md);
+}
+.edu-card p { margin: 0 0 6px; color: var(--muted); font-size: var(--text-sm); line-height: 1.6; }
+.cert-list {
+  margin: 0;
+  padding-left: 20px;
+  color: var(--muted);
+  line-height: 1.9;
+  font-size: var(--text-sm);
+}
+
+/* ==========================================================================
    FOOTER
    ========================================================================== */
 .site-footer { padding: 42px 0; background: var(--cream); border-top: 1px solid var(--line); }
@@ -1003,6 +1204,11 @@ body.english-mode h2 em {
   .map-header { flex-direction: column; align-items: flex-start; }
   .map-buttons { width: 100%; }
   .map-buttons .button { width: 100%; }
+  
+  .developer-hero-wrap { grid-template-columns: 1fr; gap: 32px; }
+  .developer-visual { max-width: 100%; }
+  .skills-grid, .project-grid { grid-template-columns: 1fr 1fr; }
+  .education-grid { grid-template-columns: 1fr; }
 }
 
 @media (max-width: 680px) {
@@ -1049,4 +1255,8 @@ body.english-mode h2 em {
   .footer-grid { grid-template-columns: 1fr; gap: 24px; text-align: left; }
   .footer-links { justify-content: flex-start; flex-wrap: wrap; }
   .footer-meta { justify-items: start; }
+
+  .skills-grid, .project-grid { grid-template-columns: 1fr; }
+  .timeline-item { grid-template-columns: 1fr; gap: 10px; }
+  .developer-photo { width: 190px; height: 190px; }
 }

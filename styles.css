@@ -76,11 +76,16 @@ a { color: inherit; text-decoration: none; }
   gap: 12px;
 }
 .brand-logo {
-  width: 160px;
+  width: auto;
+  max-width: 240px;
   height: 48px;
   object-fit: contain;
   object-position: left center;
-  mix-blend-mode: multiply;
+  display: block;
+  transition: transform .2s ease;
+}
+.brand:hover .brand-logo {
+  transform: scale(1.02);
 }
 
 /* Nav Menu & Actions */
@@ -130,6 +135,18 @@ a { color: inherit; text-decoration: none; }
   background: var(--rose-100);
   color: var(--rose-900);
   border-color: var(--rose-500);
+}
+.xerox-nav-link {
+  background: var(--rose-800) !important;
+  color: var(--white) !important;
+  border-color: var(--rose-800) !important;
+  box-shadow: 0 4px 14px rgba(93, 38, 55, .2);
+}
+.xerox-nav-link:hover {
+  background: var(--rose-950) !important;
+  border-color: var(--rose-950) !important;
+  color: var(--white) !important;
+  transform: translateY(-1px);
 }
 
 /* Big Language Switcher Button (Clean, Professional, No Emoji) */
@@ -227,11 +244,39 @@ a { color: inherit; text-decoration: none; }
   color: #ffffff;
 }
 .icon-whatsapp {
-  width: 20px;
-  height: 20px;
+  width: 22px;
+  height: 22px;
   object-fit: contain;
   vertical-align: middle;
-  filter: brightness(0) invert(1);
+  flex-shrink: 0;
+}
+.icon-whatsapp-sm {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+.contact-action-whatsapp {
+  border-color: rgba(37, 211, 102, .35) !important;
+}
+.contact-action-whatsapp:hover {
+  border-color: #25d366 !important;
+  background: rgba(37, 211, 102, .12) !important;
+}
+.action-symbol-whatsapp {
+  border: 1.5px solid #25d366 !important;
+  background: rgba(37, 211, 102, .18) !important;
+  box-shadow: 0 0 10px rgba(37, 211, 102, .25);
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+}
+.contact-whatsapp-logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+  display: block;
 }
 
 /* Button Variants */
@@ -519,25 +564,40 @@ body.english-mode h2 em {
 }
 .service-card-media {
   width: 100%;
-  height: 160px;
+  height: 200px;
+  aspect-ratio: 16 / 10;
   margin-bottom: 14px;
   overflow: hidden;
   border-radius: var(--radius-sm);
-  background: var(--cream-deep);
+  background: #fdfaf9;
   border: 1px solid var(--line);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 .service-card-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center center;
   display: block;
   transition: transform .3s ease;
 }
-.service-card-media img[src*="id-card-maker"] {
-  object-position: center 30%;
-}
 .service-card:hover .service-card-media img {
-  transform: scale(1.04);
+  transform: scale(1.03);
+}
+.card-media-certificate {
+  background: #ffffff !important;
+  padding: 6px;
+}
+.card-certificate-img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(93, 38, 55, .08);
 }
 .service-featured {
   background: #fdf5f6;
@@ -811,10 +871,14 @@ body.english-mode h2 em {
 
 .gallery-certificate {
   grid-column: span 3;
-  aspect-ratio: 16 / 7 !important;
+  aspect-ratio: 16 / 9 !important;
+  min-height: 380px;
+  background: #ffffff;
 }
 .gallery-certificate img {
   max-height: calc(100% - 56px);
+  object-fit: contain;
+  padding: 10px;
 }
 .gallery-certificate figcaption {
   margin: 0;

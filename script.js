@@ -38,7 +38,7 @@ document.querySelectorAll(".gallery-grid figure").forEach((figure) => {
 // Translation Dictionary (Marathi Default <-> English) - Professional, No Cartoon Emojis
 const translations = {
   mr: {
-    langButtonText: "English Version",
+    langButtonText: "English ↗",
     "nav a.nav-link:nth-of-type(1)": "सेवा",
     "nav a.nav-link:nth-of-type(2)": "आमची माहिती",
     "nav a.nav-link:nth-of-type(3)": "गॅलरी",
@@ -151,10 +151,13 @@ const translations = {
     ".footer-links a:nth-of-type(4)": "पत्ता व संपर्क",
     ".footer-links a:nth-of-type(5)": "डेव्हलपर",
     ".footer-meta span:first-child": "मराठी <b>·</b> English",
-    ".footer-meta span:last-child": "© <span id=\"year\">" + new Date().getFullYear() + "</span> विष्णुपूरिकर झेरॉक्स. सर्व हक्क सुरक्षित."
+    ".footer-meta span:last-child": "© <span id=\"year\">" + new Date().getFullYear() + "</span> विष्णुपूरिकर झेरॉक्स. सर्व हक्क सुरक्षित.",
+    ".bottom-action-btn.btn-call span": "कॉल करा",
+    ".bottom-action-btn.btn-whatsapp span": "व्हॉट्सअ‍ॅप",
+    ".bottom-action-btn.btn-maps span": "थेट रस्ता"
   },
   en: {
-    langButtonText: "मराठी आवृत्ती",
+    langButtonText: "मराठी ↗",
     "nav a.nav-link:nth-of-type(1)": "Services",
     "nav a.nav-link:nth-of-type(2)": "Our story",
     "nav a.nav-link:nth-of-type(3)": "Gallery",
@@ -267,7 +270,10 @@ const translations = {
     ".footer-links a:nth-of-type(4)": "Contact",
     ".footer-links a:nth-of-type(5)": "Developer",
     ".footer-meta span:first-child": "English <b>·</b> मराठी",
-    ".footer-meta span:last-child": "© <span id=\"year\">" + new Date().getFullYear() + "</span> Vishnupurikar Xerox. All rights reserved."
+    ".footer-meta span:last-child": "© <span id=\"year\">" + new Date().getFullYear() + "</span> Vishnupurikar Xerox. All rights reserved.",
+    ".bottom-action-btn.btn-call span": "Call",
+    ".bottom-action-btn.btn-whatsapp span": "WhatsApp",
+    ".bottom-action-btn.btn-maps span": "Directions"
   }
 };
 
@@ -286,8 +292,12 @@ function applyLanguage(lang) {
 
   // Update Big Language Button Label
   const langTextSpan = document.querySelector("#lang-text");
+  const langCurrentSpan = document.querySelector(".lang-current");
   if (langTextSpan) {
     langTextSpan.textContent = content.langButtonText;
+  }
+  if (langCurrentSpan) {
+    langCurrentSpan.textContent = lang === "mr" ? "मराठी" : "English";
   }
 
   // Update elements
@@ -312,20 +322,56 @@ function applyLanguage(lang) {
   localStorage.setItem("preferred-language", lang);
 }
 
+// Seamless View Transitions for Language Switching
+function switchLanguageWithViewTransition(nextLang) {
+  if (document.startViewTransition) {
+    document.startViewTransition(() => {
+      applyLanguage(nextLang);
+    });
+  } else {
+    applyLanguage(nextLang);
+  }
+}
+
 // Language Toggle Button Click Handler
 const langToggleBtn = document.querySelector("#lang-toggle-btn");
 if (langToggleBtn) {
   langToggleBtn.addEventListener("click", () => {
     const nextLang = currentLanguage === "mr" ? "en" : "mr";
-    applyLanguage(nextLang);
+    switchLanguageWithViewTransition(nextLang);
   });
 }
 
-// Initial Load: Default to Marathi ('mr')
+// Initial Load: Strict Marathi ('mr') default
+const urlParams = new URLSearchParams(window.location.search);
+const urlLang = urlParams.get("lang");
 const savedLang = localStorage.getItem("preferred-language");
-if (savedLang === "en") {
+
+if (urlLang === "en" || (savedLang === "en" && urlLang !== "mr")) {
   applyLanguage("en");
 } else {
-  // Always default to Marathi
+  // Always strictly default to Marathi
   applyLanguage("mr");
+  localStorage.setItem("preferred-language", "mr");
+}
+
+// Skeleton Loader Dismissal with smooth fade out
+function dismissSkeletonLoader() {
+  const skeleton = document.getElementById("app-skeleton");
+  if (skeleton) {
+    skeleton.classList.add("skeleton-fade-out");
+    setTimeout(() => {
+      skeleton.remove();
+    }, 350);
+  }
+}
+
+if (document.readyState === "complete") {
+  setTimeout(dismissSkeletonLoader, 120);
+} else {
+  window.addEventListener("load", () => {
+    setTimeout(dismissSkeletonLoader, 120);
+  });
+  // Fallback safety timeout
+  setTimeout(dismissSkeletonLoader, 400);
 }
